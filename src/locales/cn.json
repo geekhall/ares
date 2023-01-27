@@ -6,6 +6,8 @@
     "home": "首页",
     "about": "关于",
     "logout": "退出",
-    "content": "I18n 示例页面"
-  }
+    "content": "I18n 示例页面",
+    "personalCenter": "个人中心"
+  },
+  "login": "登录"
 }

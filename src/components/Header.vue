@@ -1,20 +1,11 @@
 <template>
-  <div class="gh-footer">
-    <h1>Footer</h1>
+  <div class="header">
+    <h1>Logo</h1>
     <nav text-xl mt-6 inline-flex gap-2>
       <button class="icon-btn !outline-none" @click="toggleDark()">
         <div v-if="isDark" i-carbon-moon />
         <div v-else i-carbon-sun />
       </button>
-
-      <a
-        class="icon-btn"
-        i-carbon-logo-github
-        rel="noreferrer"
-        href="https://github.com/geekhall"
-        target="_blank"
-        title="GitHub"
-      />
     </nav>
   </div>
 </template>
@@ -23,25 +14,24 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'Footer'
+  name: 'Header'
 })
 </script>
-<script lang="ts" setup>
-import { isDark, toggleDark } from '~/composables'
+<script setup lang="ts">
 </script>
 
 <style lang="sass" scoped>
-.gh-footer
+.header
   position: fixed
-  bottom: 0
-  left: 200px
+  top: 0
+  left: 0
   width: 100%
   height: 50px
   line-height: 50px
   text-align: center
   margin: 0
   color: #eee
-
+  background-color: #3c3c3c
   display: flex
   justify-content: space-between
   align-items: center

@@ -2,8 +2,13 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+interface IRequestOption {
+  url: string;
+  method: string;
+  data?: any;
+}
 
-export function request(config: AxiosRequestConfig) {
+export function request_with_conf(config: AxiosRequestConfig) {
 
   // 1. 创建 axios 实例
   const instance = axios.create({

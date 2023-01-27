@@ -6,6 +6,8 @@
     "home": "Home",
     "about": "About",
     "logout": "Logout",
-    "content": "I18n sample page."
-  }
+    "content": "I18n sample page.",
+    "personalCenter": "Personal Center"
+  },
+  "login": "Login"
 }

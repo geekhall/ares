@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { App } from 'vue'
+import Layout from '~/layout/index.vue'
+import PageFrame from '~/layout/components/PageFrame.vue'
+import store from "~/store"
+
 
 // 1. Define route components.
 const Home = () => import('../views/Home.vue')
@@ -11,11 +15,11 @@ const I18nSample = () => import('../views/I18nSample.vue')
 const TailwindSample = () => import('../views/TailwindSample.vue')
 const UnoCssSample = () => import('../views/UnoCssSample.vue')
 const IconSample = () => import('../views/IconSample.vue')
-
+const NotFound = () => import('../views/404.vue')
 
 // 2. Define some routes
 const routes = [
-  { path: '/', name: "home", component: Home },
+  { path: '/', name: "Home", component: Layout },
   { path: '/about', name: "about", component: About },
   { path: '/hello', name: "hello", component: HelloWorld },
   { path: '/axios', name: "axiosSample", component: AxiosSample },
@@ -24,6 +28,7 @@ const routes = [
   { path: '/tailwind', name: "tailwindSample", component: TailwindSample },
   { path: '/uno', name: "unoCssSample", component: UnoCssSample },
   { path: '/icon', name: "iconSample", component: IconSample },
+  { path: '/:pathMatch(.*)*', name: "notFound", component: NotFound },
 ]
 
 // 3. Create the router instance and pass the `routes` option

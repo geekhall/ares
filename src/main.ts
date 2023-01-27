@@ -1,20 +1,15 @@
 import { createApp } from 'vue'
-import Vue from 'vue'
 
-/** 重置样式 这里引入自定义的重置样式也可 */
-// import '@unocss/reset/tailwind.css' // 这里放开会导致式样错乱，暂时不知道为什么
-
-// 引入normalize.css
-import 'normalize.css/normalize.css'
-
-/**
- *  项目内的样式，
- *  注意：最好放在重置样式后，uno.css前
- */
-import './style.css'
+//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// import style
+// 引入的各种样式，如normalize.css、tailwind.css、uno.css等
+//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// import '@unocss/reset/tailwind.css'            // 这里放开会导致式样错乱
+import 'normalize.css/normalize.css'              // A modern alternative to CSS resets
+import './style.css'                              //项目内的样式，注意：最好放在重置样式后，uno.css前
 import './tailwind.css'
-
-// 引入uno.css
+import 'element-plus/dist/index.css'
+import './assets/css/icon.css'
 import 'uno.css'
 
 //_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -22,36 +17,27 @@ import 'uno.css'
 // 引入的各种第三方模块，如Element Plus、Vue Router、Vuex等
 //_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
-// 引入路由
-import router, { setupRouter } from './router'
+import router, { setupRouter } from './router'    // 引入Vue-router路由
+import * as ElementPlusIconsVue from '@element-plus/icons-vue' // 引入Element Plus图标
 
 // 全局引入Element Plus（本工程使用按需引入，这里注释掉）
 // import ElementPlus from 'element-plus'
 // import 'element-plus/dist/index.css'
 
-// 引入Vuex
-import store from './store'
-
-// import App from './App.vue'
-
-// 引入vue-i18n，用于国际化
-import { createI18n } from 'vue-i18n'
+import store from './store'                       // 引入Vuex
+import { createI18n } from 'vue-i18n'             // 引入vue-i18n，用于国际化
 import messages from "@intlify/unplugin-vue-i18n/messages";
 
 //_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // createApp
 //_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-
 import App from './App.vue'
-
 const app = createApp(App)
 
 //_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // setting
 // 各种第三方模块的设置，如Element Plus、Vue Router、Vuex等
 //_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-
-
 // 设置Vue-router路由
 setupRouter(app)
 
@@ -72,9 +58,11 @@ const i18n = createI18n({
 });
 app.use(i18n)
 
-//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-// mount
-//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// 注册Element Plus图标
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
+
 router.isReady().then(() => {
   app.mount('#app')
 })

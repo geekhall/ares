@@ -34,7 +34,6 @@ specifiers:
   vuex: ^4.0.2
 
 dependencies:
-  '@element-plus/icons-vue': 2.0.10_vue@3.2.45
   '@intlify/unplugin-vue-i18n': 0.8.1_vue-i18n@9.2.2
   axios: 1.2.3
   vue: 3.2.45
@@ -43,6 +42,7 @@ dependencies:
   vuex: 4.0.2_vue@3.2.45
 
 devDependencies:
+  '@element-plus/icons-vue': 2.0.10_vue@3.2.45
   '@iconify-json/ep': 1.1.8
   '@types/node': 18.11.18
   '@unocss/vite': 0.48.5_vite@4.0.4
@@ -109,6 +109,7 @@ packages:
       vue: ^3.2.0
     dependencies:
       vue: 3.2.45
+    dev: true
 
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
