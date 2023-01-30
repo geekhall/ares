@@ -9,5 +9,19 @@
     "content": "I18n sample page.",
     "personalCenter": "Personal Center"
   },
+  "menu": {
+    "App": "App",
+    "AppUser": "User Management",
+    "AppDept": "Dept Management",
+    "AppRole": "Role Management",
+    "AppResource": "Resource Management",
+    "AppPermission": "Permission Management",
+    "Sys": "System",
+    "SysUser": "User Management",
+    "SysNotice": "Notice Management",
+    "Logs": "Logs",
+    "LogsVisit": "Visit Logs",
+    "LogsOperation": "Operation Logs"
+  },
   "login": "Login"
 }
